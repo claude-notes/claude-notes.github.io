@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gptguide.cn/pages/windows-install-claude-code-cn/</loc>
+    <loc>https://gptguide.cn/pages/how_to_use_claude_code_in_china/</loc>
     
     <lastmod>2025-07-06</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/pages/how_to_use_claude_code_in_china/</loc>
+    <loc>https://gptguide.cn/pages/windows-install-claude-code-cn/</loc>
     
-    <lastmod>2025-07-02</lastmod>
+    <lastmod>2025-07-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -215,20 +215,6 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/tags/AI/</loc>
-    <lastmod>2025-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
-    <lastmod>2025-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -237,6 +223,20 @@
   
   <url>
     <loc>https://gptguide.cn/tags/Wildcard/</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/AI/</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -273,14 +273,14 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/AI/</loc>
+    <loc>https://gptguide.cn/categories/ChatGPT/</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/ChatGPT/</loc>
+    <loc>https://gptguide.cn/categories/AI/</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
