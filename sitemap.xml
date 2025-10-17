@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gptguide.cn/pages/bewildcard_upgrade_chatgptplus/</loc>
+    
+    <lastmod>2025-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gptguide.cn/pages/claude-code-codex-bundle-china/</loc>
     
     <lastmod>2025-10-17</lastmod>
@@ -164,15 +173,6 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/pages/bewildcard_upgrade_chatgptplus/</loc>
-    
-    <lastmod>2025-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/pages/2025_claude_100_percent_registration_upgrade_guide/</loc>
     
     <lastmod>2025-07-19</lastmod>
@@ -322,20 +322,6 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/tags/AI/</loc>
-    <lastmod>2025-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
-    <lastmod>2025-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/tags/ChatGPT/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -358,6 +344,20 @@
   
   <url>
     <loc>https://gptguide.cn/tags/Midjourney/</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/AI/</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -450,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/Claude-Code/</loc>
+    <loc>https://gptguide.cn/categories/Clade-Code/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/Clade-Code/</loc>
+    <loc>https://gptguide.cn/categories/Claude-Code/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -485,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/</loc>
+    <loc>https://gptguide.cn/categories/OnlyFans/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/OnlyFans/</loc>
+    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
