@@ -373,20 +373,6 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/tags/Claude-Code/</loc>
-    <lastmod>2025-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/Codex/</loc>
-    <lastmod>2025-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,6 +381,20 @@
   
   <url>
     <loc>https://gptguide.cn/tags/Wildcard/</loc>
+    <lastmod>2025-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/Claude-Code/</loc>
+    <lastmod>2025-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/Codex/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -494,13 +494,6 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/</loc>
-    <lastmod>2025-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/categories/OnlyFans/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -508,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/</loc>
+    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -516,6 +509,13 @@
   
   <url>
     <loc>https://gptguide.cn/categories/Wildcard/</loc>
+    <lastmod>2025-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
