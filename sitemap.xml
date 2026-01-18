@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gptguide.cn/pages/cli-notify-when-ai-task-finished/</loc>
+    
+    <lastmod>2026-01-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gptguide.cn/pages/gpt-image-1-5-vs-nano-banana-2-test/</loc>
     
     <lastmod>2025-12-17</lastmod>
@@ -364,7 +373,7 @@
 
   <url>
     <loc>https://gptguide.cn/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -372,119 +381,119 @@
   
   <url>
     <loc>https://gptguide.cn/tags/%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Claude/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/ChatGPT/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Gemini/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Grok/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Midjourney/</loc>
-    <lastmod>2025-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/AI/</loc>
-    <lastmod>2025-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Wildcard/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Claude-Code/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Codex/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/AI/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/</loc>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Grok4/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/Grok4-Code/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/OnlyFans/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -493,91 +502,98 @@
   
   <url>
     <loc>https://gptguide.cn/categories/Claude/</loc>
-    <lastmod>2025-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/categories/AI/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/ChatGPT/</loc>
-    <lastmod>2025-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/categories/Clade-Code/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/Claude-Code/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/categories/Clade-Code/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/categories/AI%E5%88%9B%E4%BD%9C/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/categories/AI/</loc>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/Gemini/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/Grok/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/OnlyFans/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gptguide.cn/categories/Wildcard/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

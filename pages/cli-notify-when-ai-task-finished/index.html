@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器 - GPT、Claude国内升级教程网</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="GPT、Claude国内升级教程网"><meta name="msapplication-TileImage" content="/img/logo2.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GPT、Claude国内升级教程网"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="AI 任务运行时间太长又不想一直盯着终端？我做了一个轻量级 AI CLI 提醒器，在任务完成或异常时自动通知，让你安心开发、放心摸鱼。本文介绍设计思路、使用场景与实现方式，适合所有开发者。"><meta property="og:type" content="blog"><meta property="og:title" content="AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器"><meta property="og:url" content="https://gptguide.cn/pages/cli-notify-when-ai-task-finished/"><meta property="og:site_name" content="GPT、Claude国内升级教程网"><meta property="og:description" content="AI 任务运行时间太长又不想一直盯着终端？我做了一个轻量级 AI CLI 提醒器，在任务完成或异常时自动通知，让你安心开发、放心摸鱼。本文介绍设计思路、使用场景与实现方式，适合所有开发者。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/1.webp"><meta property="og:image" content="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/2.webp"><meta property="og:image" content="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/3.webp"><meta property="article:published_time" content="2026-01-18T12:00:00.000Z"><meta property="article:modified_time" content="2026-01-18T12:12:55.101Z"><meta property="article:author" content="yueshiwa"><meta property="article:tag" content="Gemini"><meta property="article:tag" content="Claude Code"><meta property="article:tag" content="Codex"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/1.webp"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://gptguide.cn/pages/cli-notify-when-ai-task-finished/"},"headline":"AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器","image":["https://img.zeker.top/ai/cli-notify-when-ai-task-finished/1.webp","https://img.zeker.top/ai/cli-notify-when-ai-task-finished/2.webp","https://img.zeker.top/ai/cli-notify-when-ai-task-finished/3.webp"],"datePublished":"2026-01-18T12:00:00.000Z","dateModified":"2026-01-18T12:12:55.101Z","author":{"@type":"Person","name":"yueshiwa"},"publisher":{"@type":"Organization","name":"GPT、Claude国内升级教程网","logo":{"@type":"ImageObject","url":"https://gptguide.cn/img/logo2.png"}},"description":"AI 任务运行时间太长又不想一直盯着终端？我做了一个轻量级 AI CLI 提醒器，在任务完成或异常时自动通知，让你安心开发、放心摸鱼。本文介绍设计思路、使用场景与实现方式，适合所有开发者。"}</script><link rel="canonical" href="https://gptguide.cn/pages/cli-notify-when-ai-task-finished/"><link rel="icon" href="/img/logo2.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">档案</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">友链</a><a class="navbar-item" target="_blank" rel="noopener" href="https://chatshare.uno">小店</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-01-18T12:00:00.000Z" title="2026/1/18 20:00:00">2026-01-18</time>发表</span><span class="level-item"><time dateTime="2026-01-18T12:12:55.101Z" title="2026/1/18 20:12:55">2026-01-18</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></span><span class="level-item">15 分钟读完 (大约2285个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器</h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为一个热爱摸鱼的开发者，我每天都要和 Claude Code、Codex、Gemini 这些 AI 工具打交道。它们确实很强大，但喜欢摸鱼的我有一个让人抓狂的问题：<strong>当你给它们布置一个耗时的任务后，你永远不知道什么时候该回来看结果。</strong></p>
+<p>想象一下这些场景：</p>
+<ul>
+<li>让 Claude 重构一个大型模块，你切到 B 站看番，结果它 5 分钟就跑完了，而你多摸了 25 分钟，拖延了进度</li>
+<li>让 Gemini 分析一份 1000 行的日志文件，你去刷小红书，结果忘了这茬，半小时后才想起来，耽误了时间</li>
+<li>让 Codex 生成测试用例，你开始逛论坛，结果 AI 早就完成了，你却还在那继续逛，不被老板发现的话那就很舒服了！</li>
+</ul>
+<p><strong>不过这种”不知道什么时候该回来看”的焦虑，让摸鱼都摸得不安心。</strong></p>
+<p>要么就是不敢摸鱼（频繁切回去看，打断摸鱼节奏），要么就是摸过头了（浪费时间，还可能被领导发现）。</p>
+<p>作为一个有追求的摸鱼爱好者，我需要一个解决方案：<strong>既能安心摸鱼，又不耽误正事。</strong></p>
+<span id="more"></span>
+
+<h2 id="AI-CLI-Complete-Notify"><a href="#AI-CLI-Complete-Notify" class="headerlink" title="AI CLI Complete Notify"></a>AI CLI Complete Notify</h2><p>开发者肯定离不开cc、codex、gemini等cli编程助手，用得最多的大多都是这几个</p>
+<p>于是，我花了几天时间（当然也是摸鱼时间做的），做了这个工具——<strong>AI CLI Complete Notify</strong>。</p>
+<blockquote>
+<p>项目已开源，GitHub 地址见文末</p>
+</blockquote>
+<p>它的核心功能很简单：<strong>当 AI 完成任务时，自动通知你，让你可以安心摸鱼。</strong></p>
+<p>为了让这个摸鱼神器真正好用，我加入了很多精心设计的功能。</p>
+<h3 id="🎯-智能阈值：短任务不打扰，长任务才提醒"><a href="#🎯-智能阈值：短任务不打扰，长任务才提醒" class="headerlink" title="🎯 智能阈值：短任务不打扰，长任务才提醒"></a>🎯 智能阈值：短任务不打扰，长任务才提醒</h3><p>如果 AI 只用了 10 秒就完成任务，你根本不需要通知——因为你还没来得及打开摸鱼网站。</p>
+<p>所以我加入了<strong>智能阈值系统</strong>：</p>
+<ul>
+<li>只有超过设定时间（比如 5 分钟）的任务才会触发通知</li>
+<li>不同的 AI 源可以设置不同的阈值</li>
+<li>短任务静默完成，长任务及时提醒</li>
+</ul>
+<p><img src="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/1.webp"></p>
+<p>这样就避免了”通知疲劳”，只在真正需要的时候提醒你收心干活。</p>
+<h3 id="🎯-智能去抖：更精准的提醒时机"><a href="#🎯-智能去抖：更精准的提醒时机" class="headerlink" title="🎯 智能去抖：更精准的提醒时机"></a>🎯 智能去抖：更精准的提醒时机</h3><p>最新版本加入了<strong>智能去抖机制</strong>，让提醒时机更加精准，而这也是针对一些喜欢逐步拆分任务、输出任务结果的cli（比如cc）：</p>
+<ul>
+<li><strong>有工具调用</strong>：等待 60 秒（AI 还在执行任务，可能有后续输出）</li>
+<li><strong>无工具调用</strong>：仅需 15 秒（可能是最后一条消息，快速提醒）</li>
+</ul>
+<p>系统会自动分析 AI 的消息类型，智能调整等待时间。这意味着：</p>
+<ul>
+<li>复杂任务（多次工具调用）：在真正完成后才提醒</li>
+<li>简单问答（无工具调用）：15 秒快速提醒，不用等太久</li>
+</ul>
+<h3 id="📱-多通道通知：无论你摸到哪都能找到你"><a href="#📱-多通道通知：无论你摸到哪都能找到你" class="headerlink" title="📱 多通道通知：无论你摸到哪都能找到你"></a>📱 多通道通知：无论你摸到哪都能找到你</h3><p>我支持了 <strong>6 种通知方式</strong>，确保无论你在刷什么，都能收到提醒：</p>
+<ol>
+<li><strong>协作平台</strong>（飞书&#x2F;钉钉&#x2F;企微）：摸鱼时最常用，假装在工作</li>
+<li><strong>Telegram Bot</strong>：支持代理，适合国际摸鱼爱好者</li>
+<li><strong>邮件通知</strong>：适合不想装额外软件的人</li>
+<li><strong>桌面通知</strong>：系统原生气泡提示，不容易被忽略</li>
+<li><strong>声音提醒</strong>：TTS 语音播报 + 提示音，戴着耳机也能听到</li>
+<li><strong>手环提醒</strong>：通过手环 App 转发通知，手机不在身边也能收到</li>
+</ol>
+<p>你可以同时开启多个通道，比如我自己就开了飞书 + 桌面通知 + 声音提醒。<strong>而且如果你有智能手环、手表的话，也可以允许这些应用提醒，这样手机不在身边也可以及时收到。</strong></p>
+<p>这样无论是在刷 B 站、逛知乎还是打游戏，都不会错过 AI 的回复。</p>
+<h3 id="🖥️-桌面应用：配置从未如此简单"><a href="#🖥️-桌面应用：配置从未如此简单" class="headerlink" title="🖥️ 桌面应用：配置从未如此简单"></a>🖥️ 桌面应用：配置从未如此简单</h3><p>虽然我是个命令行爱好者，但我知道不是所有人都喜欢编辑配置文件。</p>
+<blockquote>
+<p>如果需要命令行的话，可以前往项目下查看，这里就不赘述</p>
+</blockquote>
+<p>所以我做了一个 <strong>Electron 桌面应用</strong>：</p>
+<ul>
+<li>中英文界面切换</li>
+<li>可视化配置所有通知渠道</li>
+<li>托盘隐藏，不占用任务栏</li>
+<li>开机自启动（可选）</li>
+</ul>
+<p>对于不想碰命令行的用户，下载 EXE 文件双击运行就行。</p>
+<p><img src="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/2.webp"></p>
+<h2 id="💡-使用建议"><a href="#💡-使用建议" class="headerlink" title="💡 使用建议"></a>💡 使用建议</h2><p><strong>重要提示</strong>：为了获得最佳体验，建议在使用 Claude Code &#x2F; Codex &#x2F; Gemini 时授予 AI 助手<strong>完整的文件读写权限</strong>。</p>
+<p>这样做的好处：</p>
+<ul>
+<li>✅ 确保任务日志被正确记录到本地文件</li>
+<li>✅ 监听功能能够准确捕获任务完成状态</li>
+<li>✅ 提醒时机更加精准，避免误报或漏报</li>
+<li>✅ AI 可以更好地管理项目文件和配置</li>
+</ul>
+<h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><h3 id="Windows-用户"><a href="#Windows-用户" class="headerlink" title="Windows 用户"></a>Windows 用户</h3><ol>
+<li>从 github中的releases中下载最新的 <code>ai-cli-complete-notify-x.x.x.zip</code></li>
+<li>压缩包解压后放到任意目录（如 <code>D:\Tools\</code>）</li>
+<li>复制 <code>.env.example</code> 为 <code>.env</code>，按照里面的要求填写通知配置</li>
+<li>双击运行桌面应用即可</li>
+</ol>
+<blockquote>
+<p>配置完成后，可以在桌面应用的”测试”选项卡中测试各个通知渠道是否正常工作。</p>
+</blockquote>
+<p><img src="https://img.zeker.top/ai/cli-notify-when-ai-task-finished/3.webp"></p>
+<h3 id="macOS-Linux-用户"><a href="#macOS-Linux-用户" class="headerlink" title="macOS &#x2F; Linux 用户"></a>macOS &#x2F; Linux 用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ZekerTop/ai-cli-complete-notify.git</span><br><span class="line"><span class="built_in">cd</span> ai-cli-complete-notify</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line"><span class="comment"># 编辑 .env 文件，填写您的通知配置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行桌面应用</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="📊-使用效果：摸鱼效率提升-300"><a href="#📊-使用效果：摸鱼效率提升-300" class="headerlink" title="📊 使用效果：摸鱼效率提升 300%"></a>📊 使用效果：摸鱼效率提升 300%</h2><p>自从用上这个工具后，我的摸鱼质量发生了质的飞跃：</p>
+<p><strong>之前</strong>：</p>
+<ul>
+<li>给 AI 布置任务 → 不敢摸鱼 → 频繁切回去看 → 摸鱼体验极差</li>
+</ul>
+<p><strong>现在</strong>：</p>
+<ul>
+<li>给 AI 布置任务 → 立即开始摸鱼 → 收到通知 → 秒回工作状态 → 完美</li>
+</ul>
+<p><strong>具体数据</strong>：</p>
+<ul>
+<li>每天可以安心摸鱼 <strong>30-40 分钟</strong>（之前这些时间都在焦虑中度过）</li>
+<li>AI 任务完成后的响应时间从平均 <strong>5 分钟</strong>降到 <strong>10 秒</strong></li>
+<li>再也没有”摸鱼摸过头”或”被领导发现”的情况</li>
+</ul>
+<p>更重要的是，<strong>心理负担大大减轻</strong>。我不再需要在脑子里记着”还有个 AI 任务在跑”，可以完全专注于当前的摸鱼活动。</p>
+<p>摸鱼摸得安心，工作干得高效，这才是 AI 时代程序员的正确打开方式。</p>
+<h2 id="🔗-项目地址"><a href="#🔗-项目地址" class="headerlink" title="🔗 项目地址"></a>🔗 项目地址</h2><p>目前该项目已在 GitHub 开源：</p>
+<blockquote>
+<p>👉<strong>项目地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/ZekerTop/ai-cli-complete-notify">https://github.com/ZekerTop/ai-cli-complete-notify</a></p>
+<p>（或者点击文末“阅读原文”跳转）</p>
+</blockquote>
+<ul>
+<li>完整的源代码和文档</li>
+<li>一键配置向导</li>
+<li>Windows&#x2F;macOS&#x2F;Linux 全平台支持</li>
+</ul>
+<p>如果你也是 AI 工具的重度用户，或者是摸鱼爱好者，不妨试试这个工具。</p>
+<p style="color: red;bold">如果你对这个开源项目感兴趣或者有其他意见的话，欢迎提交issue，最后拜托拜托点点star，谢谢~</p>
+
+
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>AI 工具正在改变我们的工作方式，但工具本身也需要工具来优化。</p>
+<p>这个项目的初衷很简单：<strong>让 AI 更好地为人类服务，让程序员可以安心摸鱼。</strong></p>
+<p>在 AI 时代，我们需要的不仅是更强大的模型，还需要更智能的工作流。这个小工具只是一个开始。</p>
+<p>毕竟，能摸鱼的时候为什么要傻等呢？</p>
+<p><strong>如果你对 Claude Code、Codex、Gemini CLI 感兴趣并且想同时协同工作的话，可以查看往期文章</strong>👇</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/muGMyr_zD55Y4Tb2ranj-A">教你在国内用一个套餐同时体验到Claude Code+Codex两大AI编程助手</a></p>
+<h3 id="往期文章推荐："><a href="#往期文章推荐：" class="headerlink" title="往期文章推荐："></a>往期文章推荐：</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/NL1sI-R91exKL8cygpG59w">GPT Plus升级失败？没有虚拟卡、海外信用卡怎么办？全新技术实现24小时自助直充升级GPT</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LDbD5KuKVc4XKKQ7ymqkRw">如何在国内低成本一次性使用到ChatGPT、Claude、Grok、Gemini等海内外主流AI模型</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器</p><p><a href="https://gptguide.cn/pages/cli-notify-when-ai-task-finished/">https://gptguide.cn/pages/cli-notify-when-ai-task-finished/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yueshiwa</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-01-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-01-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Gemini/">Gemini</a><a class="link-muted mr-2" rel="tag" href="/tags/Claude-Code/">Claude Code</a><a class="link-muted mr-2" rel="tag" href="/tags/Codex/">Codex</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/official_account_card.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/pages/gpt-image-1-5-vs-nano-banana-2-test/"><span class="level-item">没有发布会，GPT Image 1.5 凌晨发布，实测与Nano Banana2相比，各有优势，但也一言难尽...</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/yueshi_wechat.png" alt="联系方式"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">联系方式</p><p class="is-size-6 is-block">ChatGPT Plus官方成品、代充，1:1平替GPT、Claude镜像站账号，不限速，无限次数对话</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">40</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://img.zeker.top/official_account_card.webp" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/sitemap.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AI/"><span class="tag">AI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ChatGPT/"><span class="tag">ChatGPT</span><span class="tag">24</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude/"><span class="tag">Claude</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude-Code/"><span class="tag">Claude Code</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Codex/"><span class="tag">Codex</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gemini/"><span class="tag">Gemini</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok/"><span class="tag">Grok</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4/"><span class="tag">Grok4</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4-Code/"><span class="tag">Grok4 Code</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Midjourney/"><span class="tag">Midjourney</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OnlyFans/"><span class="tag">OnlyFans</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wildcard/"><span class="tag">Wildcard</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/"><span class="tag">海外商业化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/"><span class="tag">虚拟卡</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1%E5%B9%B3%E5%8F%B0/"><span class="tag">虚拟卡平台</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="tag">银河录像局</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="tag">镜像站</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gptguide.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT、Claude国内升级教程网</span></span><span class="level-right"><span class="level-item tag">gptguide.cn</span></span></a></li><li><a class="level is-mobile" href="https://www.zeker.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ztop の AI空间站</span></span><span class="level-right"><span class="level-item tag">www.zeker.top</span></span></a></li><li><a class="level is-mobile" href="https://chatgptshow.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">ChatGPT展览馆</span></span><span class="level-right"><span class="level-item tag">chatgptshow.com</span></span></a></li><li><a class="level is-mobile" href="https://gptplus.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT官网自助代充平台</span></span><span class="level-right"><span class="level-item tag">gptplus.uno</span></span></a></li><li><a class="level is-mobile" href="https://gaccode.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gac Code镜像站</span></span><span class="level-right"><span class="level-item tag">gaccode.com</span></span></a></li><li><a class="level is-mobile" href="https://chatshare.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">我的小店</span></span><span class="level-right"><span class="level-item tag">chatshare.uno</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/AI/"><span class="level-start"><span class="level-item">AI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/AI%E5%88%9B%E4%BD%9C/"><span class="level-start"><span class="level-item">AI创作</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/Clade-Code/"><span class="level-start"><span class="level-item">Clade Code</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude-Code/"><span class="level-start"><span class="level-item">Claude Code</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Gemini/"><span class="level-start"><span class="level-item">Gemini</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Grok/"><span class="level-start"><span class="level-item">Grok</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OnlyFans/"><span class="level-start"><span class="level-item">OnlyFans</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Wildcard/"><span class="level-start"><span class="level-item">Wildcard</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="level-start"><span class="level-item">银河录像局</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="level-start"><span class="level-item">镜像站</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-01-18T12:00:00.000Z">2026-01-18</time></p><p class="title"><a href="/pages/cli-notify-when-ai-task-finished/">AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器</a></p><p class="categories"><a href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T07:00:00.000Z">2025-12-17</time></p><p class="title"><a href="/pages/gpt-image-1-5-vs-nano-banana-2-test/">没有发布会，GPT Image 1.5 凌晨发布，实测与Nano Banana2相比，各有优势，但也一言难尽...</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-12T07:00:00.000Z">2025-12-12</time></p><p class="title"><a href="/pages/gpt-5-2-vs-gemini-3-vs-claude-4-5/">AI巨头混战：GPT-5.2紧急出击，对比Gemini3和Claude4.5谁更强呢？不同场景下该如何选择模型呢？</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-11-25T12:00:00.000Z">2025-11-25</time></p><p class="title"><a href="/pages/claude-opus-4-5-vs-sonnet-haiku-guide/">AI编程王者Claude Opus 4.5归来，成本直降2/3！附Opus、Sonnet、Haiku全面选型指南</a></p><p class="categories"><a href="/categories/Claude/">Claude</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-11-19T12:00:00.000Z">2025-11-19</time></p><p class="title"><a href="/pages/gemini3-vs-claude4-5-vs-gpt5-1-ai-comparison-guide/">Gemini 3 有这么好用吗？与Claude 4.5、GPT5.1相比如何呢？【附如何低成本使用到Gemini3】</a></p><p class="categories"><a href="/categories/Gemini/">Gemini</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2026/01/"><span class="level-start"><span class="level-item">一月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">十二月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/11/"><span class="level-start"><span class="level-item">十一月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/10/"><span class="level-start"><span class="level-item">十月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/09/"><span class="level-start"><span class="level-item">九月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/08/"><span class="level-start"><span class="level-item">八月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/07/"><span class="level-start"><span class="level-item">七月 2025</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/06/"><span class="level-start"><span class="level-item">六月 2025</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/05/"><span class="level-start"><span class="level-item">五月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">三月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">七月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a><p class="is-size-7"><span>&copy; 2026 yueshiwa</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Chatgptshow" href="https://chatgptshow.com/"><i class="fas fa-wifi"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
