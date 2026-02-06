@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？ - GPT、Claude国内升级教程网</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="GPT、Claude国内升级教程网"><meta name="msapplication-TileImage" content="/img/logo2.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GPT、Claude国内升级教程网"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Claude Opus 4.6 和 GPT-5.3-Codex 有什么不同？哪些更新值得关注？本文全面解析两大模型在编程、推理、多模态与使用场景上的差异，帮助你快速选对适合自己的 AI 模型。"><meta property="og:type" content="blog"><meta property="og:title" content="Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？"><meta property="og:url" content="https://gptguide.cn/pages/claude-opus-4-6-vs-gpt-5-3-codex/"><meta property="og:site_name" content="GPT、Claude国内升级教程网"><meta property="og:description" content="Claude Opus 4.6 和 GPT-5.3-Codex 有什么不同？哪些更新值得关注？本文全面解析两大模型在编程、推理、多模态与使用场景上的差异，帮助你快速选对适合自己的 AI 模型。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://picx.zhimg.com/v2-3afa54767ca2036449bdd223697f4301_1440w.jpg"><meta property="og:image" content="https://pic4.zhimg.com/v2-8e58c770baad0163d0f6b9200cefe2a7_1440w.jpg"><meta property="og:image" content="https://pic1.zhimg.com/v2-d978856aa2746d81831e7a0335e68538_1440w.jpg"><meta property="og:image" content="https://pic3.zhimg.com/v2-53e2103648854fad5a0c95dde3cc5a38_1440w.jpg"><meta property="og:image" content="https://pic2.zhimg.com/v2-344cb5dd39bf5dee7146844a4579883f_1440w.jpg"><meta property="og:image" content="https://pic4.zhimg.com/v2-4cc0d28d40842bfbacad83634474a81d_1440w.jpg"><meta property="og:image" content="https://pic4.zhimg.com/v2-1efdb0bb79fcb24e1edcc6a25cffd401_1440w.jpg"><meta property="og:image" content="https://pica.zhimg.com/v2-7d0cc6277c15fb63cb3cd0cf6e16f3ee_1440w.jpg"><meta property="og:image" content="https://pic2.zhimg.com/v2-d194d31dcaeca469d73ced51fb246c5d_1440w.jpg"><meta property="og:image" content="https://pic3.zhimg.com/v2-fa8f5fa622408df2492ce20bda2635cc_1440w.jpg"><meta property="og:image" content="https://pica.zhimg.com/v2-9399e1696bf59f7d6b509cf00bc27fe8_1440w.jpg"><meta property="og:image" content="https://pic2.zhimg.com/v2-4be80df78e2a33dbfb21d9305f0e4c43_1440w.jpg"><meta property="og:image" content="https://picx.zhimg.com/v2-e4d31ca32e62d9f629a8a803700eb2b9_1440w.jpg"><meta property="og:image" content="https://pic1.zhimg.com/v2-3c2d702a7bca9588b779b061f3037c98_1440w.jpg"><meta property="og:image" content="https://pic3.zhimg.com/v2-06a81e8c0e4de8f42667d40d639dc028_1440w.jpg"><meta property="og:image" content="https://img.zeker.top/official_account_card.webp"><meta property="article:published_time" content="2026-02-06T07:00:00.000Z"><meta property="article:modified_time" content="2026-02-06T13:00:15.103Z"><meta property="article:author" content="yueshiwa"><meta property="article:tag" content="Claude"><meta property="article:tag" content="ChatGPT"><meta property="article:tag" content="Claude Code"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://picx.zhimg.com/v2-3afa54767ca2036449bdd223697f4301_1440w.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://gptguide.cn/pages/claude-opus-4-6-vs-gpt-5-3-codex/"},"headline":"Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？","image":["https://picx.zhimg.com/v2-3afa54767ca2036449bdd223697f4301_1440w.jpg","https://pic4.zhimg.com/v2-8e58c770baad0163d0f6b9200cefe2a7_1440w.jpg","https://pic1.zhimg.com/v2-d978856aa2746d81831e7a0335e68538_1440w.jpg","https://pic3.zhimg.com/v2-53e2103648854fad5a0c95dde3cc5a38_1440w.jpg","https://pic2.zhimg.com/v2-344cb5dd39bf5dee7146844a4579883f_1440w.jpg","https://pic4.zhimg.com/v2-4cc0d28d40842bfbacad83634474a81d_1440w.jpg","https://pic4.zhimg.com/v2-1efdb0bb79fcb24e1edcc6a25cffd401_1440w.jpg","https://pica.zhimg.com/v2-7d0cc6277c15fb63cb3cd0cf6e16f3ee_1440w.jpg","https://pic2.zhimg.com/v2-d194d31dcaeca469d73ced51fb246c5d_1440w.jpg","https://pic3.zhimg.com/v2-fa8f5fa622408df2492ce20bda2635cc_1440w.jpg","https://pica.zhimg.com/v2-9399e1696bf59f7d6b509cf00bc27fe8_1440w.jpg","https://pic2.zhimg.com/v2-4be80df78e2a33dbfb21d9305f0e4c43_1440w.jpg","https://picx.zhimg.com/v2-e4d31ca32e62d9f629a8a803700eb2b9_1440w.jpg","https://pic1.zhimg.com/v2-3c2d702a7bca9588b779b061f3037c98_1440w.jpg","https://pic3.zhimg.com/v2-06a81e8c0e4de8f42667d40d639dc028_1440w.jpg","https://img.zeker.top/official_account_card.webp"],"datePublished":"2026-02-06T07:00:00.000Z","dateModified":"2026-02-06T13:00:15.103Z","author":{"@type":"Person","name":"yueshiwa"},"publisher":{"@type":"Organization","name":"GPT、Claude国内升级教程网","logo":{"@type":"ImageObject","url":"https://gptguide.cn/img/logo2.png"}},"description":"Claude Opus 4.6 和 GPT-5.3-Codex 有什么不同？哪些更新值得关注？本文全面解析两大模型在编程、推理、多模态与使用场景上的差异，帮助你快速选对适合自己的 AI 模型。"}</script><link rel="canonical" href="https://gptguide.cn/pages/claude-opus-4-6-vs-gpt-5-3-codex/"><link rel="icon" href="/img/logo2.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">档案</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">友链</a><a class="navbar-item" target="_blank" rel="noopener" href="https://chatshare.uno">小店</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-02-06T07:00:00.000Z" title="2026/2/6 15:00:00">2026-02-06</time>发表</span><span class="level-item"><time dateTime="2026-02-06T13:00:15.103Z" title="2026/2/6 21:00:15">2026-02-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/ChatGPT/">ChatGPT</a></span><span class="level-item">17 分钟读完 (大约2558个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？</h1><div class="content"><p>快过年了，最近国内AI老热闹了，元宝送红包，千问送奶茶，火药味十足，运营更是一套一套的，再看看国外，人家直接双双上模型，给新年打了一手双响炮。</p>
+<p><img src="https://picx.zhimg.com/v2-3afa54767ca2036449bdd223697f4301_1440w.jpg"></p>
+<p>Anthropic 刚把 <strong>Claude Opus 4.6</strong> 端上来，<br>OpenAI 转头就甩出 <strong>GPT-5.3-Codex</strong>，而且 Codex 不是“PPT 发布”，在 App、CLI、IDE 插件里已经能直接用。</p>
+<p>更关键的是，这两次更新都不是那种</p>
+<blockquote>
+<p>“参数 +1%，大家散了吧”</p>
+</blockquote>
+<p>而是<strong>路线非常清晰的强化</strong>：</p>
+<ul>
+<li><p>Claude 继续往「<strong>通用智能、长上下文、复杂思考</strong>」走</p>
+</li>
+<li><p>Codex 则彻底站在「<strong>代码、工程、智能体执行力</strong>」这一边</p>
+</li>
+</ul>
+<p>如果你平时：</p>
+<ul>
+<li>要写代码</li>
+<li>要写文档</li>
+<li>要做分析</li>
+<li>或者已经在用 Agent 搭工作流</li>
+</ul>
+<p>那这次更新，<strong>大概率会影响你接下来怎么用模型</strong>。</p>
+<p>所以问题来了：<br><strong>Claude Opus 4.6 和 GPT-5.3-Codex，到底各自升级了什么？又有什么本质不同？</strong></p>
+<blockquote>
+<p>以下均为官方数据</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="一、Claude-Opus-4-6"><a href="#一、Claude-Opus-4-6" class="headerlink" title="一、Claude Opus 4.6"></a>一、Claude Opus 4.6</h2><p>如果用一句话形容 Claude Opus 4.6：<br><strong>它不是变得更激进了，而是更稳了。</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-8e58c770baad0163d0f6b9200cefe2a7_1440w.jpg"></p>
+<h3 id="长上下文，终于拉到-Opus-该有的位置"><a href="#长上下文，终于拉到-Opus-该有的位置" class="headerlink" title="长上下文，终于拉到 Opus 该有的位置"></a>长上下文，终于拉到 Opus 该有的位置</h3><p>这次 Anthropic 做了一件很关键的事：<br><strong>第一次把 Opus 系列推到了 100 万 token 上下文（测试版）</strong>。</p>
+<ul>
+<li>常规可用：200K token</li>
+<li>测试版：100 万 token</li>
+<li>最大输出：128K token（相比上一代 64K 翻倍）</li>
+</ul>
+<p>这在很多场景下意味着什么？</p>
+<p>不是“我可以塞更多废话”，<br>而是：</p>
+<ul>
+<li>一整个代码仓库</li>
+<li>一整份研究资料</li>
+<li>多轮、长时间不间断的对话</li>
+</ul>
+<p><strong>可以一次性放进模型的工作记忆里。</strong></p>
+<p>在 MRCR v2 八针 1M（大海捞针）测试中，Opus 4.6 比 Sonnet 4.5 整整高出了 <strong>57 分</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-d978856aa2746d81831e7a0335e68538_1440w.jpg"></p>
+<p>这个提升非常直观地体现在：</p>
+<blockquote>
+<p>你不需要频繁帮它“回忆上下文”。</p>
+</blockquote>
+<h3 id="自适应思考，开始学会“该不该多想”"><a href="#自适应思考，开始学会“该不该多想”" class="headerlink" title="自适应思考，开始学会“该不该多想”"></a>自适应思考，开始学会“该不该多想”</h3><p>Opus 4.6 这次引入了 <strong>Adaptive Thinking（自适应思考）</strong>。</p>
+<p><img src="https://pic3.zhimg.com/v2-53e2103648854fad5a0c95dde3cc5a38_1440w.jpg"></p>
+<p>简单说就是：</p>
+<ul>
+<li>简单问题 → 不强行长推理</li>
+<li>复杂问题 → 自动加深思考</li>
+<li>高级用户 → 可以把 effort 拉到 max</li>
+</ul>
+<p>这是一个非常 Claude 风格的更新。<br>它不追求“每次都想得很复杂”，<br>而是<strong>在合适的时候，认真想一想</strong>。</p>
+<h3 id="长对话不崩，上下文自动压缩"><a href="#长对话不崩，上下文自动压缩" class="headerlink" title="长对话不崩，上下文自动压缩"></a>长对话不崩，上下文自动压缩</h3><p>还有一个很容易被忽略，但实际非常好用的功能：<br><strong>上下文压缩（beta）</strong>。</p>
+<p>当对话或 Agent 任务快要打到上下文上限时，Claude 会自动把早期内容压缩成摘要，再用摘要继续对话。</p>
+<p>结果就是：<br><strong>你可以把对话拉得非常长，但模型依然“记得发生过什么”。</strong></p>
+<h3 id="Claude-in-PowerPoint"><a href="#Claude-in-PowerPoint" class="headerlink" title="Claude in PowerPoint"></a>Claude in PowerPoint</h3><p>本次更新Claude也集成到了PowerPoint侧边栏中，让它在创建新内容之前读取现有的布局、字体和母版。</p>
+<p>Claude可以根据客户模板构建演示文稿、对现有幻灯片进行针对性编辑。</p>
+<p><img src="https://pic2.zhimg.com/v2-344cb5dd39bf5dee7146844a4579883f_1440w.jpg"></p>
+<p>你会明显感觉到：<br><strong>Claude Opus 4.6 更像一个“不会情绪化输出的同事”。</strong></p>
+<h3 id="价格方面"><a href="#价格方面" class="headerlink" title="价格方面"></a>价格方面</h3><p>在价格方面，API价格保持不变，还是＄5&#x2F;$25每百万token（输入&#x2F;输出）。</p>
+<p>如果是超过20万token的上下文，这里会有额外定价，是$10&#x2F;$37.50每百万token。</p>
+<p><img src="https://pic4.zhimg.com/v2-4cc0d28d40842bfbacad83634474a81d_1440w.jpg"></p>
+<h3 id="适合什么人用？"><a href="#适合什么人用？" class="headerlink" title="适合什么人用？"></a>适合什么人用？</h3><p>如果你主要在做：</p>
+<ul>
+<li>长文写作</li>
+<li>产品方案、研究分析</li>
+<li>多轮复杂对话</li>
+<li>对表达准确性要求很高的任务</li>
+</ul>
+<p>那 Claude Opus 4.6 非常对路。</p>
+<p>一句话总结：</p>
+<blockquote>
+<p><strong>Claude Opus 4.6 更像一个耐心、克制、逻辑感很强的合作者。</strong></p>
+</blockquote>
+<h2 id="二、GPT-5-3-Codex：这是给程序员准备的版本"><a href="#二、GPT-5-3-Codex：这是给程序员准备的版本" class="headerlink" title="二、GPT-5.3-Codex：这是给程序员准备的版本"></a>二、GPT-5.3-Codex：这是给程序员准备的版本</h2><p>和 Claude 的“稳”不同，<br>GPT-5.3-Codex 的气质只有一个字：<strong>干。</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-1efdb0bb79fcb24e1edcc6a25cffd401_1440w.jpg"></p>
+<h3 id="不只是写代码，而是理解“工程”"><a href="#不只是写代码，而是理解“工程”" class="headerlink" title="不只是写代码，而是理解“工程”"></a>不只是写代码，而是理解“工程”</h3><p><img src="https://pica.zhimg.com/v2-7d0cc6277c15fb63cb3cd0cf6e16f3ee_1440w.jpg"></p>
+<p>GPT-5.3-Codex 融合了：</p>
+<ul>
+<li>GPT-5.2-Codex 的编码能力</li>
+<li>GPT-5.2 的推理能力和专业知识</li>
+</ul>
+<p>结果是一个非常明确的变化：</p>
+<ul>
+<li>以前：能写函数</li>
+<li>现在：开始理解项目结构、多文件关系、真实工作流</li>
+</ul>
+<p>再加上 <strong>整体推理速度提升 25%</strong> ，Codex 已经很适合被长期放在 IDE 或 CLI 里“盯活”。</p>
+<h3 id="OSWorld-Verified：一个非常夸张的指标"><a href="#OSWorld-Verified：一个非常夸张的指标" class="headerlink" title="OSWorld-Verified：一个非常夸张的指标"></a>OSWorld-Verified：一个非常夸张的指标</h3><p>GPT-5.3-Codex 有一个指标高得有点离谱：<br><strong>OSWorld-Verified（视觉桌面操作）</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-d194d31dcaeca469d73ced51fb246c5d_1440w.jpg"></p>
+<p>简单说，就是让 AI：</p>
+<ul>
+<li>看屏幕截图</li>
+<li>操作真实的电脑界面</li>
+<li>完成桌面级任务</li>
+</ul>
+<p>成绩是：</p>
+<ul>
+<li>人类基准：72%</li>
+<li>GPT-5.2-Codex：38.2%</li>
+<li>GPT-5.2：37.9%</li>
+<li><strong>GPT-5.3-Codex：64.7%</strong></li>
+</ul>
+<p>这说明一件事：<br><strong>Codex 已经不只是“写代码”，而是开始“动手做事”。</strong></p>
+<h3 id="真实工程评测依然强"><a href="#真实工程评测依然强" class="headerlink" title="真实工程评测依然强"></a>真实工程评测依然强</h3><p>在<strong>目前最接近程序员真实工作方式的评测之一</strong>的Terminal-Bench 2.0测试（终端编程，在真实终端环境里完成编程任务）中，<strong>两家唯一可正面对比的指标</strong>上：</p>
+<ul>
+<li>GPT-5.3-Codex 比 Claude Opus 4.6 高 <strong>12 分</strong></li>
+</ul>
+<p>而在GPT其他版本模型下，GPT-5.3-Codex 相比</p>
+<ul>
+<li>相比 GPT-5.2-Codex，高了13.3 个点</li>
+<li>相比通用 GPT-5.2，高了15.1 个点</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/v2-fa8f5fa622408df2492ce20bda2635cc_1440w.jpg"></p>
+<p>在纯工程场景下，Codex 的优势非常清晰！！！代码方面直接碾压其他模型</p>
+<h3 id="Codex-现在更适合做什么？"><a href="#Codex-现在更适合做什么？" class="headerlink" title="Codex 现在更适合做什么？"></a>Codex 现在更适合做什么？</h3><p>如果你的痛点是：</p>
+<ul>
+<li>日常开发节奏太慢</li>
+<li>旧代码难读、难改</li>
+<li>想快速搭 demo &#x2F; PoC</li>
+<li>学新语言或新框架</li>
+</ul>
+<p>那 GPT-5.3-Codex 的目标很明确：</p>
+<blockquote>
+<p><strong>减少你真正敲代码的时间</strong></p>
+</blockquote>
+<h2 id="三、差异一览"><a href="#三、差异一览" class="headerlink" title="三、差异一览"></a>三、差异一览</h2><p>这里不站队，只说事实。</p>
+<ul>
+<li><p><strong>定位</strong></p>
+<ul>
+<li>Claude：通用智能、复杂思考</li>
+<li>Codex：代码、工程、智能体执行</li>
+</ul>
+</li>
+<li><p><strong>风格</strong></p>
+<ul>
+<li>Claude：克制、严谨、稳定</li>
+<li>Codex：高效、直接、行动派</li>
+</ul>
+</li>
+<li><p><strong>输出重点</strong></p>
+<ul>
+<li>Claude：解释、分析、结构化思考</li>
+<li>Codex：可执行代码、工具调用、任务完成</li>
+</ul>
+</li>
+<li><p><strong>适合人群</strong></p>
+<ul>
+<li>Claude：内容、产品、研究、分析</li>
+<li>Codex：工程、开发、自动化</li>
+</ul>
+</li>
+</ul>
+<p>结论很简单：<br><strong>不是谁更强，而是谁更适合你的场景。</strong></p>
+<h2 id="四、普通用户该怎么用？"><a href="#四、普通用户该怎么用？" class="headerlink" title="四、普通用户该怎么用？"></a>四、普通用户该怎么用？</h2><h3 id="最简单的选择法"><a href="#最简单的选择法" class="headerlink" title="最简单的选择法"></a>最简单的选择法</h3><ul>
+<li>主要写代码 → <strong>GPT-5.3-Codex</strong></li>
+<li>主要写方案 &#x2F; 长文 &#x2F; 分析 → <strong>Claude Opus 4.6</strong></li>
+<li>两种都干 → <strong>分工协作</strong></li>
+</ul>
+<h3 id="一个很实用的“组合拳”"><a href="#一个很实用的“组合拳”" class="headerlink" title="一个很实用的“组合拳”"></a>一个很实用的“组合拳”</h3><p>很多人已经在这么用：</p>
+<ol>
+<li><p>用 <strong>Claude Opus 4.6</strong></p>
+<ul>
+<li>梳理需求</li>
+<li>写设计说明</li>
+<li>明确约束条件</li>
+</ul>
+</li>
+<li><p>用 <strong>GPT-5.3-Codex</strong></p>
+<ul>
+<li>实现代码</li>
+<li>修改多文件</li>
+<li>Debug、重构</li>
+</ul>
+</li>
+<li><p>再回到 <strong>Claude</strong></p>
+<ul>
+<li>写文档</li>
+<li>做总结</li>
+<li>给出可读解释</li>
+</ul>
+</li>
+</ol>
+<p>这套流程，<strong>非常容易提升整体效率</strong>。</p>
+<h3 id="如何使用到它们呢？"><a href="#如何使用到它们呢？" class="headerlink" title="如何使用到它们呢？"></a>如何使用到它们呢？</h3><p>Claude Opus 4.6、GPT-5.3-Codex这些都可以通过升级原有账号的形式进行使用到</p>
+<blockquote>
+<p>可以前往我们的自助代充导航网站：<a target="_blank" rel="noopener" href="https://www.gptclaude.top/">gptclaude.top</a></p>
+<p>(复制到浏览器打开)</p>
+</blockquote>
+<p><img src="https://pica.zhimg.com/v2-9399e1696bf59f7d6b509cf00bc27fe8_1440w.jpg"></p>
+<p>目前 <strong>Claude Code</strong> 更新最新版本可以直接使用到Opus 4.6，下面那个1M context是更长的上下文，但这也代表了更多的消耗。</p>
+<p><img src="https://pic2.zhimg.com/v2-4be80df78e2a33dbfb21d9305f0e4c43_1440w.jpg"></p>
+<p>而 <strong>GPT-5.3-Codex</strong>，目前还没有API，不过在app，CLI，IDE插件and网页版都能用了，有小伙伴反馈说更新后没有看到，如果没有发现5.3-codex的可以重新登录一下获取模型，或者手动修改配置文件<code>config.toml</code>，像这样</p>
+<p><img src="https://picx.zhimg.com/v2-e4d31ca32e62d9f629a8a803700eb2b9_1440w.jpg"></p>
+<p>如果是vscode插件的话，更新重启之后就可以看到啦~</p>
+<p><img src="https://pic1.zhimg.com/v2-3c2d702a7bca9588b779b061f3037c98_1440w.jpg"></p>
+<p>如果你只用于这些编程模型，不是很想升级的话，这里推荐我自己也在用的中转站，可以使用到Claude code、Codex、Gemini，一份套餐可以享受到三大顶尖编程工具协同高效配合，感兴趣的可以看一下往期文章👇</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/muGMyr_zD55Y4Tb2ranj-A">教你在国内用一个套餐同时体验到Claude Code+Codex两大AI编程助手</a></p>
+<p><img src="https://pic3.zhimg.com/v2-06a81e8c0e4de8f42667d40d639dc028_1440w.jpg"></p>
+<h2 id="最后有话说"><a href="#最后有话说" class="headerlink" title="最后有话说"></a>最后有话说</h2><p>这次模型更新给人的一个明显感觉是：</p>
+<p>大模型的竞争，正在从“参数、跑分”转向<strong>细节、体验和工作流适配</strong>。</p>
+<p>你不一定需要“最强的模型”，而是需要一个<strong>更适合你干活的模型</strong>。</p>
+<blockquote>
+<p>最近感觉各厂的模型更新都没有像之前一样频繁开发布会了，仿佛模型更新已经成为了一种日常迭代，都开始卷更全面的Agent了。</p>
+</blockquote>
+<p><strong>最后欢迎在评论区聊聊你的使用场景，你会更倾向于把模型放在哪些场景上呢？</strong></p>
+<hr>
+<p>最后感谢大家能够看到文章的最后，如果你觉得这篇文章对你有启发或者帮助，不妨点个关注，你的支持将是我最大的动力，谢谢！</p>
+<p><img src="https://img.zeker.top/official_account_card.webp"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？</p><p><a href="https://gptguide.cn/pages/claude-opus-4-6-vs-gpt-5-3-codex/">https://gptguide.cn/pages/claude-opus-4-6-vs-gpt-5-3-codex/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yueshiwa</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-02-06</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-02-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Claude/">Claude</a><a class="link-muted mr-2" rel="tag" href="/tags/ChatGPT/">ChatGPT</a><a class="link-muted mr-2" rel="tag" href="/tags/Claude-Code/">Claude Code</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/official_account_card.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/pages/cli-notify-when-ai-task-finished/"><span class="level-item">AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/yueshi_wechat.png" alt="联系方式"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">联系方式</p><p class="is-size-6 is-block">ChatGPT Plus官方成品、代充，1:1平替GPT、Claude镜像站账号，不限速，无限次数对话</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">41</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://img.zeker.top/official_account_card.webp" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/sitemap.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AI/"><span class="tag">AI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ChatGPT/"><span class="tag">ChatGPT</span><span class="tag">25</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude/"><span class="tag">Claude</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude-Code/"><span class="tag">Claude Code</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Codex/"><span class="tag">Codex</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gemini/"><span class="tag">Gemini</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok/"><span class="tag">Grok</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4/"><span class="tag">Grok4</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4-Code/"><span class="tag">Grok4 Code</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Midjourney/"><span class="tag">Midjourney</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OnlyFans/"><span class="tag">OnlyFans</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wildcard/"><span class="tag">Wildcard</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/"><span class="tag">海外商业化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/"><span class="tag">虚拟卡</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1%E5%B9%B3%E5%8F%B0/"><span class="tag">虚拟卡平台</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="tag">银河录像局</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="tag">镜像站</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gptguide.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT、Claude国内升级教程网</span></span><span class="level-right"><span class="level-item tag">gptguide.cn</span></span></a></li><li><a class="level is-mobile" href="https://www.zeker.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ztop の AI空间站</span></span><span class="level-right"><span class="level-item tag">www.zeker.top</span></span></a></li><li><a class="level is-mobile" href="https://chatgptshow.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">ChatGPT展览馆</span></span><span class="level-right"><span class="level-item tag">chatgptshow.com</span></span></a></li><li><a class="level is-mobile" href="https://gptplus.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT官网自助代充平台</span></span><span class="level-right"><span class="level-item tag">gptplus.uno</span></span></a></li><li><a class="level is-mobile" href="https://gaccode.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gac Code镜像站</span></span><span class="level-right"><span class="level-item tag">gaccode.com</span></span></a></li><li><a class="level is-mobile" href="https://chatshare.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">我的小店</span></span><span class="level-right"><span class="level-item tag">chatshare.uno</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/AI/"><span class="level-start"><span class="level-item">AI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/AI%E5%88%9B%E4%BD%9C/"><span class="level-start"><span class="level-item">AI创作</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/categories/Clade-Code/"><span class="level-start"><span class="level-item">Clade Code</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude-Code/"><span class="level-start"><span class="level-item">Claude Code</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Gemini/"><span class="level-start"><span class="level-item">Gemini</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Grok/"><span class="level-start"><span class="level-item">Grok</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OnlyFans/"><span class="level-start"><span class="level-item">OnlyFans</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Wildcard/"><span class="level-start"><span class="level-item">Wildcard</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="level-start"><span class="level-item">银河录像局</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="level-start"><span class="level-item">镜像站</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-02-06T07:00:00.000Z">2026-02-06</time></p><p class="title"><a href="/pages/claude-opus-4-6-vs-gpt-5-3-codex/">Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-01-18T12:00:00.000Z">2026-01-18</time></p><p class="title"><a href="/pages/cli-notify-when-ai-task-finished/">AI任务跑太久又不想盯终端，为了开发摸鱼两不误，我做了个AI CLI提醒器</a></p><p class="categories"><a href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T07:00:00.000Z">2025-12-17</time></p><p class="title"><a href="/pages/gpt-image-1-5-vs-nano-banana-2-test/">没有发布会，GPT Image 1.5 凌晨发布，实测与Nano Banana2相比，各有优势，但也一言难尽...</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-12T07:00:00.000Z">2025-12-12</time></p><p class="title"><a href="/pages/gpt-5-2-vs-gemini-3-vs-claude-4-5/">AI巨头混战：GPT-5.2紧急出击，对比Gemini3和Claude4.5谁更强呢？不同场景下该如何选择模型呢？</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-11-25T12:00:00.000Z">2025-11-25</time></p><p class="title"><a href="/pages/claude-opus-4-5-vs-sonnet-haiku-guide/">AI编程王者Claude Opus 4.5归来，成本直降2/3！附Opus、Sonnet、Haiku全面选型指南</a></p><p class="categories"><a href="/categories/Claude/">Claude</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2026/02/"><span class="level-start"><span class="level-item">二月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2026/01/"><span class="level-start"><span class="level-item">一月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">十二月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/11/"><span class="level-start"><span class="level-item">十一月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/10/"><span class="level-start"><span class="level-item">十月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/09/"><span class="level-start"><span class="level-item">九月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/08/"><span class="level-start"><span class="level-item">八月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/07/"><span class="level-start"><span class="level-item">七月 2025</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/06/"><span class="level-start"><span class="level-item">六月 2025</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/05/"><span class="level-start"><span class="level-item">五月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">三月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">七月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a><p class="is-size-7"><span>&copy; 2026 yueshiwa</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Chatgptshow" href="https://chatgptshow.com/"><i class="fas fa-wifi"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
