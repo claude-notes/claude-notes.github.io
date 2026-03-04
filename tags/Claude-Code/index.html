@@ -29,60 +29,11 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">档案</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">友链</a><a class="navbar-item" target="_blank" rel="noopener" href="https://chatshare.uno">小店</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">标签</a></li><li class="is-active"><a href="#" aria-current="page">Claude Code</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-03-04T07:00:00.000Z" title="2026/3/4 15:00:00">2026-03-04</time>发表</span><span class="level-item"><time dateTime="2026-03-04T13:36:30.945Z" title="2026/3/4 21:36:30">2026-03-04</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></span><span class="level-item">7 分钟读完 (大约1062个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/pages/how-to-clean-local-ai-chat-history/">本地AI会话越积越多? 那就用这小工具体验一次真正可控的清理吧~</a></p><div class="content"><p>上周在清理磁盘的时候，我在几个目录里翻到了成百上千条 AI 会话文件。 </p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">档案</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">友链</a><a class="navbar-item" target="_blank" rel="noopener" href="https://chatshare.uno">小店</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">标签</a></li><li class="is-active"><a href="#" aria-current="page">Claude Code</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-03-04T07:00:00.000Z" title="2026/3/4 15:00:00">2026-03-04</time>发表</span><span class="level-item"><time dateTime="2026-03-04T14:21:00.248Z" title="2026/3/4 22:21:00">2026-03-04</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></span><span class="level-item">7 分钟读完 (大约1063个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/pages/how-to-clean-local-ai-chat-history/">本地AI会话越积越多? 那就用这小工具体验一次真正可控的清理吧~</a></p><div class="content"><p>上周在清理磁盘的时候，我在几个目录里翻到了成百上千条 AI 会话文件。 </p>
 <p><code>~/.codex/sessions</code>、<code>~/.claude/projects</code>、<code>~/.gemini/tmp</code>，每个都在默默长胖。</p>
 <p><strong>最麻烦的不是占空间，而是你根本不知道哪些该留、哪些能删。</strong></p>
 <p>甚至也有出现一些对话作废了，不能收纳的情况</p>
-<p>于是我做了这个小工具 <code>CliJanitor</code>，专门干一件事，帮我把本地 AI 会话“看清楚，再清干净”。</p>
-<h2 id="这个工具到底解决了什么"><a href="#这个工具到底解决了什么" class="headerlink" title="这个工具到底解决了什么"></a>这个工具到底解决了什么</h2><p>很多人会以为“清理会话”就是删文件，但真实场景不是。  </p>
-<ul>
-<li>这条会话是哪个工具生成的</li>
-<li>有没有我还会复用的上下文</li>
-<li>这批删除会不会误伤</li>
-<li>万一删错了能不能回滚</li>
-</ul>
-<p><code>CliJanitor</code> 现在支持统一处理 <code>Claude Code</code>、<code>Codex</code>、<code>Gemini</code> 三类会话，并且同时给了 CLI 和 GUI 两种入口。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-01fb675579add52377cfe1627b906f79_720w.webp"></p>
-<h2 id="我最在意的三个设计"><a href="#我最在意的三个设计" class="headerlink" title="我最在意的三个设计"></a>我最在意的三个设计</h2><h3 id="一、先读懂再动手删"><a href="#一、先读懂再动手删" class="headerlink" title="一、先读懂再动手删"></a>一、先读懂再动手删</h3><p>我给会话做了预览增强，不是简单把原始 JSON 糊你一脸。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-54072c3b53194b607c97b4ace5e3edc8_720w.webp"></p>
-<p>预览里会尽量过滤命令噪声和运行元信息，只保留 <code>user</code> 和 <code>assistant</code> 的有效对话，还会单独补一段“最近一次对话”，方便你快速判断是否还有价值。</p>
-<h3 id="二、删除默认安全"><a href="#二、删除默认安全" class="headerlink" title="二、删除默认安全"></a>二、删除默认安全</h3><p>默认是进回收站，不是直接物理删除。</p>
-<p>而且 <code>dry-run</code> 打开时，即使你顺手勾了永久删除，也只会预演，不会真删。</p>
-<p><img src="https://picx.zhimg.com/80/v2-d9d4fd555c6b42cb96832ee5645e00bd_720w.webp"></p>
-<p>另外，删除动作会写入日志，后续追溯成本很低。</p>
-<h3 id="三、过滤必须足够快"><a href="#三、过滤必须足够快" class="headerlink" title="三、过滤必须足够快"></a>三、过滤必须足够快</h3><p>按 provider、关键词、日期、大小筛选，做成了实时生效。</p>
-<p><img src="https://picx.zhimg.com/80/v2-ab8db11688120583e36be2369a12c79b_720w.webp"></p>
-<p>不用每次点 <code>Apply</code>，列表会直接响应，这对“先看一眼再决定删不删”很关键。</p>
-<h2 id="一些硬核但不花哨的实现细节"><a href="#一些硬核但不花哨的实现细节" class="headerlink" title="一些硬核但不花哨的实现细节"></a>一些硬核但不花哨的实现细节</h2><p>这项目看起来像 UI 工具，其实底层我花了不少心思做“稳”。</p>
-<ul>
-<li>会话 ID 不是随机数，是基于 <code>provider + path</code> 做哈希，结果稳定可复现</li>
-<li>扫描支持 include&#x2F;exclude glob，避免误扫 <code>.git</code> 和 <code>node_modules</code></li>
-<li>配置放在 <code>%USERPROFILE%\\.clijanitor\\config.toml</code></li>
-<li>删除日志是 JSON Lines，便于后续审计和脚本分析</li>
-</ul>
-<h2 id="怎么上手最省事"><a href="#怎么上手最省事" class="headerlink" title="怎么上手最省事"></a>怎么上手最省事</h2><ul>
-<li>方式一：直接运行 EXE（Windows）</li>
-</ul>
-<p>直接前往github网址中的releases下载压缩包解压</p>
-<p>运行可执行文件exe即可：<code>release/CliJanitor/CliJanitor.exe</code></p>
-<ul>
-<li>方式二：源码运行（开发模式）</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以可编辑模式安装项目（源码变更可立即生效）</span> </span><br><span class="line">pip install -e . </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查运行环境与依赖是否完整</span> </span><br><span class="line">clijanitor doctor </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动桌面 GUI</span> </span><br><span class="line">clijanitor gui</span><br></pre></td></tr></table></figure>
-
-<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p>目前该项目已在 GitHub 开源：</p>
-<blockquote>
-<p>👉项目地址：<code>https://github.com/ZekerTop/CliJanitor</code></p>
-<p>（或者点击文末“阅读原文”跳转）</p>
-</blockquote>
-<p>如果你对这个开源项目感兴趣或者有其他意见的话，欢迎提交issue，最后拜托拜托点点star，谢谢~</p>
-<h3 id="往期文章👇"><a href="#往期文章👇" class="headerlink" title="往期文章👇"></a>往期文章👇</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ODLGCIA-bF0lL0G2RiaRbA">AI完成任务太耗时？想要摸鱼却又怕耽误时间，于是我做了个AI任务完成提醒器</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/muGMyr_zD55Y4Tb2ranj-A">教你在国内用一个套餐同时体验到Claude Code+Codex两大AI编程助手</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/NL1sI-R91exKL8cygpG59w">GPT Plus升级失败？没有虚拟卡、海外信用卡怎么办？全新技术实现24小时自助直充升级GPT</a></p>
-<hr>
-<p>最后感谢大家能够看到文章的最后，如果你觉得这篇文章对你有启发或者帮助，不妨点个关注，你的支持将是我最大的动力，谢谢！</p>
-<p><img src="https://img.zeker.top/official_account_card.webp"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-02-06T07:00:00.000Z" title="2026/2/6 15:00:00">2026-02-06</time>发表</span><span class="level-item"><time dateTime="2026-02-06T13:12:58.463Z" title="2026/2/6 21:12:58">2026-02-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/ChatGPT/">ChatGPT</a></span><span class="level-item">17 分钟读完 (大约2568个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/pages/claude-opus-4-6-vs-gpt-5-3-codex/">Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？</a></p><div class="content"><p>快过年了，最近国内AI老热闹了，元宝送红包，千问送奶茶，火药味十足，运营更是一套一套的，再看看国外，人家直接双双上模型，给新年打了一手双响炮。</p>
+<p>于是我做了这个小工具 <code>CliJanitor</code>，专门干一件事，帮我把本地 AI 会话“看清楚，再清干净”。</p></div><a class="article-more button is-small is-size-7" href="/pages/how-to-clean-local-ai-chat-history/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-02-06T07:00:00.000Z" title="2026/2/6 15:00:00">2026-02-06</time>发表</span><span class="level-item"><time dateTime="2026-02-06T13:12:58.463Z" title="2026/2/6 21:12:58">2026-02-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/ChatGPT/">ChatGPT</a></span><span class="level-item">17 分钟读完 (大约2568个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/pages/claude-opus-4-6-vs-gpt-5-3-codex/">Claude Opus 4.6 vs GPT-5.3-Codex，主要更新了什么？有哪些不同？如何使用呢？</a></p><div class="content"><p>快过年了，最近国内AI老热闹了，元宝送红包，千问送奶茶，火药味十足，运营更是一套一套的，再看看国外，人家直接双双上模型，给新年打了一手双响炮。</p>
 <p><img src="https://picx.zhimg.com/v2-3afa54767ca2036449bdd223697f4301_1440w.jpg"></p>
 <p>Anthropic 刚把 <strong>Claude Opus 4.6</strong> 端上来，<br>OpenAI 转头就甩出 <strong>GPT-5.3-Codex</strong>，而且 Codex 不是“PPT 发布”，在 App、CLI、IDE 插件里已经能直接用。</p>
 <p>更关键的是，这两次更新都不是那种</p>
