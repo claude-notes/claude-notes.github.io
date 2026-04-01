@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】 - GPT、Claude国内升级教程网</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="GPT、Claude国内升级教程网"><meta name="msapplication-TileImage" content="/img/logo2.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GPT、Claude国内升级教程网"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Claude Code 新功能上线，正式开启赛博养宠玩法，引发大量开发者关注。本文带你了解 Claude Code 新功能是什么、赛博养宠模式怎么玩、有哪些亮点和使用场景，并整理适合中文用户阅读的体验说明。"><meta property="og:type" content="blog"><meta property="og:title" content="OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】"><meta property="og:url" content="https://gptguide.cn/pages/claude-code-saiboyangchong-xingongneng-shangxian/"><meta property="og:site_name" content="GPT、Claude国内升级教程网"><meta property="og:description" content="Claude Code 新功能上线，正式开启赛博养宠玩法，引发大量开发者关注。本文带你了解 Claude Code 新功能是什么、赛博养宠模式怎么玩、有哪些亮点和使用场景，并整理适合中文用户阅读的体验说明。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://pic4.zhimg.com/80/v2-73eb15412424edc862b413f0821b210d_720w.webp"><meta property="og:image" content="https://pica.zhimg.com/80/v2-f299382ac90f736cd7388bde9e2157d8_720w.webp"><meta property="og:image" content="https://pica.zhimg.com/80/v2-e84b5056eac177f57b46c4127d0399f4_720w.webp"><meta property="og:image" content="https://img.zeker.top/official_account_card.webp"><meta property="article:published_time" content="2026-04-01T08:30:00.000Z"><meta property="article:modified_time" content="2026-04-01T09:02:35.703Z"><meta property="article:author" content="yueshiwa"><meta property="article:tag" content="Claude Code"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://pic4.zhimg.com/80/v2-73eb15412424edc862b413f0821b210d_720w.webp"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://gptguide.cn/pages/claude-code-saiboyangchong-xingongneng-shangxian/"},"headline":"OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】","image":["https://pic4.zhimg.com/80/v2-73eb15412424edc862b413f0821b210d_720w.webp","https://pica.zhimg.com/80/v2-f299382ac90f736cd7388bde9e2157d8_720w.webp","https://pica.zhimg.com/80/v2-e84b5056eac177f57b46c4127d0399f4_720w.webp","https://img.zeker.top/official_account_card.webp"],"datePublished":"2026-04-01T08:30:00.000Z","dateModified":"2026-04-01T09:02:35.703Z","author":{"@type":"Person","name":"yueshiwa"},"publisher":{"@type":"Organization","name":"GPT、Claude国内升级教程网","logo":{"@type":"ImageObject","url":"https://gptguide.cn/img/logo2.png"}},"description":"Claude Code 新功能上线，正式开启赛博养宠玩法，引发大量开发者关注。本文带你了解 Claude Code 新功能是什么、赛博养宠模式怎么玩、有哪些亮点和使用场景，并整理适合中文用户阅读的体验说明。"}</script><link rel="canonical" href="https://gptguide.cn/pages/claude-code-saiboyangchong-xingongneng-shangxian/"><link rel="icon" href="/img/logo2.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">档案</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">友链</a><a class="navbar-item" target="_blank" rel="noopener" href="https://chatshare.uno">小店</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-04-01T08:30:00.000Z" title="2026/4/1 16:30:00">2026-04-01</time>发表</span><span class="level-item"><time dateTime="2026-04-01T09:02:35.703Z" title="2026/4/1 17:02:35">2026-04-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Claude-Code/">Claude Code</a></span><span class="level-item">11 分钟读完 (大约1596个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】</h1><div class="content"><p>就在前两天 Claude Code意外泄露源码，当时人们发现里面有一个虚拟宠物伙伴Buddy模式尚未发布，而现在，它来了。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-73eb15412424edc862b413f0821b210d_720w.webp"></p>
+<h2 id="什么是-Buddy-模式？"><a href="#什么是-Buddy-模式？" class="headerlink" title="什么是 Buddy 模式？"></a>什么是 Buddy 模式？</h2><p>在最新版本的 Claude Code<code>v2.1.89</code> 中，你的编辑器旁边会出现一只可爱的小宠物，它会在你编程时陪伴你，偶尔对你的代码发表评论，甚至在你遇到困难时给出建议。它会以完整的电子宠物风格出现在你的 Claude 代码终端里，让编程过程变得更加有趣和互动。</p>
+<blockquote>
+<p>可以通过 <code>npm i -g @anthropic-ai/claude-code</code>自行更新最新版本<code>v2.1.89</code>的</p>
+</blockquote>
+<p>重新进入 claude 输入 <code>/buddy</code> 即可查看自己的宠物属性啦，每只宠物都有自己的名字</p>
+<span id="more"></span>
+
+<p><img src="https://pica.zhimg.com/80/v2-f299382ac90f736cd7388bde9e2157d8_720w.webp"></p>
+<h2 id="宠物的五大属性系统"><a href="#宠物的五大属性系统" class="headerlink" title="宠物的五大属性系统"></a>宠物的五大属性系统</h2><p>每只宠物都有独特的属性值，这些属性会影响它们的行为和互动方式：</p>
+<h3 id="1-DEBUGGING（调试能力）"><a href="#1-DEBUGGING（调试能力）" class="headerlink" title="1. DEBUGGING（调试能力）"></a>1. DEBUGGING（调试能力）</h3><ul>
+<li>影响宠物发现代码问题的敏锐度</li>
+<li>数值越高，越能帮你找到隐藏的 bug</li>
+<li>提供调试建议的频率和质量也会提升</li>
+</ul>
+<h3 id="2-PATIENCE（耐心值）"><a href="#2-PATIENCE（耐心值）" class="headerlink" title="2. PATIENCE（耐心值）"></a>2. PATIENCE（耐心值）</h3><ul>
+<li>决定宠物在长时间任务中的表现</li>
+<li>高耐心值的宠物不会催促你</li>
+<li>对重复性问题的容忍度更高</li>
+</ul>
+<h3 id="3-CHAOS（混乱度）"><a href="#3-CHAOS（混乱度）" class="headerlink" title="3. CHAOS（混乱度）"></a>3. CHAOS（混乱度）</h3><ul>
+<li>影响宠物的随机性和创意性</li>
+<li>高混乱度可能带来意想不到的建议</li>
+<li>让编程过程充满惊喜（或惊吓？）</li>
+</ul>
+<h3 id="4-WISDOM（智慧值）"><a href="#4-WISDOM（智慧值）" class="headerlink" title="4. WISDOM（智慧值）"></a>4. WISDOM（智慧值）</h3><ul>
+<li>决定建议的深度和洞察力</li>
+<li>高智慧值的宠物能给出更专业的指导</li>
+<li>像一位经验丰富的导师</li>
+</ul>
+<h3 id="5-SNARK（讽刺-吐槽值）"><a href="#5-SNARK（讽刺-吐槽值）" class="headerlink" title="5. SNARK（讽刺&#x2F;吐槽值）"></a>5. SNARK（讽刺&#x2F;吐槽值）</h3><ul>
+<li>影响评论的幽默感和讽刺程度</li>
+<li>数值越低越友善温和</li>
+<li>数值越高越毒舌（但也更有趣）</li>
+</ul>
+<h2 id="宠物类型与稀有度"><a href="#宠物类型与稀有度" class="headerlink" title="宠物类型与稀有度"></a>宠物类型与稀有度</h2><p>目前已知的宠物系统包含：</p>
+<h3 id="稀有度分级"><a href="#稀有度分级" class="headerlink" title="稀有度分级"></a>稀有度分级</h3><ul>
+<li><strong>COMMON（普通）</strong>：最常见的宠物</li>
+<li><strong>UNCOMMON（不寻常）</strong>：不寻常的宠物</li>
+<li><strong>RARE（稀有）</strong>：可能需要特定条件解锁</li>
+<li><strong>EPIC（史诗）</strong>：更加稀有的宠物类型</li>
+<li><strong>LEGENDARY（传说）</strong>：最稀有的宠物</li>
+</ul>
+<p>可能还有其他稀有度或类型等待解锁。</p>
+<h3 id="宠物种类"><a href="#宠物种类" class="headerlink" title="宠物种类"></a>宠物种类</h3><p>根据目前的信息和社区反馈，可能包含以下类型：</p>
+<p>鸭（duck）、鹅（goose）、斑点（blob）、猫（cat）、龙（dragon）、章鱼（octopus）、猫头鹰（owl）、企鹅（penguin）、乌龟（turtle）、蜗牛（snail）、鬼（ghost）、蝾螈（axolotl）、水豚（capybara）、仙人掌（cactus）、机器人（robot）、兔子（rabbit）、蘑菇（mushroom）、大胖墩（chonk）．．．</p>
+<p>目前已知有18种（像极了小时候玩的宠物游戏了哈哈哈）</p>
+<p><img src="https://pica.zhimg.com/80/v2-e84b5056eac177f57b46c4127d0399f4_720w.webp"></p>
+<h2 id="五大好玩玩法"><a href="#五大好玩玩法" class="headerlink" title="五大好玩玩法"></a>五大好玩玩法</h2><h3 id="1-直接对话互动"><a href="#1-直接对话互动" class="headerlink" title="1. 直接对话互动"></a>1. 直接对话互动</h3><p>在输入<code>/buddy</code>之后，宠物会出现在你的输入框右边，你可以在消息中直接呼唤宠物的名字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;Hey Biscuit, what do you think about this code?&quot;</span><br><span class="line">&quot;Biscuit, any suggestions?&quot;</span><br></pre></td></tr></table></figure>
+
+<p>它会在气泡中回应你（注意：是宠物回应，不是 Claude 本体）</p>
+<h3 id="2-属性养成系统"><a href="#2-属性养成系统" class="headerlink" title="2. 属性养成系统"></a>2. 属性养成系统</h3><p>宠物的五大属性可能会随着使用而变化：</p>
+<ul>
+<li>经常调试代码 → DEBUGGING 值提升</li>
+<li>耐心处理复杂任务 → PATIENCE 值增长</li>
+<li>尝试创新方案 → CHAOS 值波动</li>
+<li>深度学习新知识 → WISDOM 值提高</li>
+</ul>
+<p>就像真正的电子宠物养成游戏！</p>
+<h3 id="3-观察评论与反馈"><a href="#3-观察评论与反馈" class="headerlink" title="3. 观察评论与反馈"></a>3. 观察评论与反馈</h3><p>宠物会根据自己的属性对你的操作发表评论：</p>
+<ul>
+<li>高 WISDOM 的宠物：给出深刻的架构建议</li>
+<li>高 SNARK 的宠物：吐槽你的代码风格</li>
+<li>高 DEBUGGING 的宠物：快速指出潜在问题</li>
+<li>高 CHAOS 的宠物：提出脑洞大开的解决方案</li>
+</ul>
+<h3 id="4-探索稀有宠物"><a href="#4-探索稀有宠物" class="headerlink" title="4. 探索稀有宠物"></a>4. 探索稀有宠物</h3><p>通过不同的编程行为和成就，可能解锁更多稀有宠物：</p>
+<ul>
+<li>完成特定数量的 commit</li>
+<li>修复一定数量的 bug</li>
+<li>连续编程时长达到里程碑</li>
+<li>使用特定编程语言达到熟练度</li>
+</ul>
+<h3 id="5-个性化编程体验"><a href="#5-个性化编程体验" class="headerlink" title="5. 个性化编程体验"></a>5. 个性化编程体验</h3><p>不同属性组合的宠物，会带来完全不同的体验：</p>
+<ul>
+<li><strong>高 WISDOM + 低 SNARK</strong>：温和的导师型</li>
+<li><strong>高 DEBUGGING + 高 SNARK</strong>：毒舌但有用的代码审查员</li>
+<li><strong>高 CHAOS + 高 PATIENCE</strong>：创意十足但不急躁的伙伴</li>
+<li><strong>全属性均衡</strong>：全能型编程助手</li>
+</ul>
+<h3 id="最后有话说"><a href="#最后有话说" class="headerlink" title="最后有话说"></a>最后有话说</h3><p>这个buddy模式其实早在前几天泄露事件中就有被人提起过，而今天4月1日也是上线了这一模式，属实是给“愚人节”加了点好玩意味了。</p>
+<p>开发者们也是对这个功能反响热烈：</p>
+<blockquote>
+<p>“终于不用一个人孤独地 debug 到深夜了，Biscuit 陪着我！”</p>
+</blockquote>
+<blockquote>
+<p>“我的鸭子 SNARK 值涨到 80 了，现在每次写代码都被吐槽，但莫名很上头…”</p>
+</blockquote>
+<blockquote>
+<p>“期待解锁传说级宠物，听说有彩蛋！”</p>
+</blockquote>
+<p>好了，话不多说，<strong>快去升级你的claude code，看看你的宠物是什么吧，也可以分享到评论区中！</strong></p>
+<h3 id="往期文章👇"><a href="#往期文章👇" class="headerlink" title="往期文章👇"></a>往期文章👇</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ODLGCIA-bF0lL0G2RiaRbA">AI完成任务太耗时？想要摸鱼却又怕耽误时间，于是我做了个AI任务完成提醒器</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/muGMyr_zD55Y4Tb2ranj-A">教你在国内用一个套餐同时体验到Claude Code+Codex两大AI编程助手</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/NL1sI-R91exKL8cygpG59w">GPT Plus升级失败？没有虚拟卡、海外信用卡怎么办？全新技术实现24小时自助直充升级GPT</a></p>
+<hr>
+<p>最后感谢大家能够看到文章的最后，如果你觉得这篇文章对你有启发或者帮助，不妨点个关注，你的支持将是我最大的动力，谢谢！</p>
+<p><img src="https://img.zeker.top/official_account_card.webp"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】</p><p><a href="https://gptguide.cn/pages/claude-code-saiboyangchong-xingongneng-shangxian/">https://gptguide.cn/pages/claude-code-saiboyangchong-xingongneng-shangxian/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yueshiwa</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-04-01</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-04-01</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Claude-Code/">Claude Code</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/official_account_card.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/pages/openclaw-gpt-5-4-shiyong-jiaocheng/"><span class="level-item">OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/yueshi_wechat.png" alt="联系方式"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">联系方式</p><p class="is-size-6 is-block">ChatGPT Plus官方成品、代充，1:1平替GPT、Claude镜像站账号，不限速，无限次数对话</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">47</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://img.zeker.top/official_account_card.webp" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/sitemap.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AI/"><span class="tag">AI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ChatGPT/"><span class="tag">ChatGPT</span><span class="tag">29</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude/"><span class="tag">Claude</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Claude-Code/"><span class="tag">Claude Code</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Codex/"><span class="tag">Codex</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gemini/"><span class="tag">Gemini</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok/"><span class="tag">Grok</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4/"><span class="tag">Grok4</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grok4-Code/"><span class="tag">Grok4 Code</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Midjourney/"><span class="tag">Midjourney</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OnlyFans/"><span class="tag">OnlyFans</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenClaw/"><span class="tag">OpenClaw</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Wildcard/"><span class="tag">Wildcard</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E5%8C%96/"><span class="tag">海外商业化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1/"><span class="tag">虚拟卡</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E5%8D%A1%E5%B9%B3%E5%8F%B0/"><span class="tag">虚拟卡平台</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="tag">银河录像局</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="tag">镜像站</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gptguide.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT、Claude国内升级教程网</span></span><span class="level-right"><span class="level-item tag">gptguide.cn</span></span></a></li><li><a class="level is-mobile" href="https://www.zeker.top/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Ztop の AI空间站</span></span><span class="level-right"><span class="level-item tag">www.zeker.top</span></span></a></li><li><a class="level is-mobile" href="https://chatgptshow.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">ChatGPT展览馆</span></span><span class="level-right"><span class="level-item tag">chatgptshow.com</span></span></a></li><li><a class="level is-mobile" href="https://gptplus.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GPT官网自助代充平台</span></span><span class="level-right"><span class="level-item tag">gptplus.uno</span></span></a></li><li><a class="level is-mobile" href="https://gaccode.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gac Code镜像站</span></span><span class="level-right"><span class="level-item tag">gaccode.com</span></span></a></li><li><a class="level is-mobile" href="https://chatshare.uno/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">我的小店</span></span><span class="level-right"><span class="level-item tag">chatshare.uno</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/AI/"><span class="level-start"><span class="level-item">AI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/AI%E5%88%9B%E4%BD%9C/"><span class="level-start"><span class="level-item">AI创作</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/categories/Clade-Code/"><span class="level-start"><span class="level-item">Clade Code</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Claude-Code/"><span class="level-start"><span class="level-item">Claude Code</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/Gemini/"><span class="level-start"><span class="level-item">Gemini</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Grok/"><span class="level-start"><span class="level-item">Grok</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OnlyFans/"><span class="level-start"><span class="level-item">OnlyFans</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Wildcard/"><span class="level-start"><span class="level-item">Wildcard</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%93%B6%E6%B2%B3%E5%BD%95%E5%83%8F%E5%B1%80/"><span class="level-start"><span class="level-item">银河录像局</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/"><span class="level-start"><span class="level-item">镜像站</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/"><span class="level-start"><span class="level-item">ChatGPT</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%95%9C%E5%83%8F%E7%AB%99/ChatGPT/Claude/"><span class="level-start"><span class="level-item">Claude</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-04-01T08:30:00.000Z">2026-04-01</time></p><p class="title"><a href="/pages/claude-code-saiboyangchong-xingongneng-shangxian/">OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】</a></p><p class="categories"><a href="/categories/Claude-Code/">Claude Code</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-03-09T07:00:00.000Z">2026-03-09</time></p><p class="title"><a href="/pages/openclaw-gpt-5-4-shiyong-jiaocheng/">OpenClaw + GPT-5.4，手把手教你无需购买 API 也能上手使用【附带GPT升级教程】</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-03-06T07:00:00.000Z">2026-03-06</time></p><p class="title"><a href="/pages/gpt-5-4-openclaw-update-guide/">GPT-5.4 深夜上线！百万上下文+原生操作电脑，OpenClaw 天选模型来了！【附GPT升级教程】</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-03-04T07:00:00.000Z">2026-03-04</time></p><p class="title"><a href="/pages/how-to-clean-local-ai-chat-history/">本地AI会话越积越多? 那就用这小工具体验一次真正可控的清理吧~</a></p><p class="categories"><a href="/categories/AI%E5%88%9B%E4%BD%9C/">AI创作</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-02-10T07:00:00.000Z">2026-02-10</time></p><p class="title"><a href="/pages/openai-tests-chatgpt-ads-new-conversational-model/">OpenAI 开始测试 ChatGPT 广告，本周将发布更新的对话模型</a></p><p class="categories"><a href="/categories/ChatGPT/">ChatGPT</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2026/04/"><span class="level-start"><span class="level-item">四月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2026/03/"><span class="level-start"><span class="level-item">三月 2026</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2026/02/"><span class="level-start"><span class="level-item">二月 2026</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2026/01/"><span class="level-start"><span class="level-item">一月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">十二月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/11/"><span class="level-start"><span class="level-item">十一月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/10/"><span class="level-start"><span class="level-item">十月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/09/"><span class="level-start"><span class="level-item">九月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/08/"><span class="level-start"><span class="level-item">八月 2025</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/07/"><span class="level-start"><span class="level-item">七月 2025</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/06/"><span class="level-start"><span class="level-item">六月 2025</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/05/"><span class="level-start"><span class="level-item">五月 2025</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">三月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">七月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo2.png" alt="GPT、Claude国内升级教程网" height="28"></a><p class="is-size-7"><span>&copy; 2026 yueshiwa</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Chatgptshow" href="https://chatgptshow.com/"><i class="fas fa-wifi"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Wildcard" href="https://wildccard.com/"><i class="fas fa-wallet"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
