@@ -587,20 +587,6 @@
 
   
   <url>
-    <loc>https://gptguide.cn/tags/Claude-Code/</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gptguide.cn/tags/ChatGPT/</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gptguide.cn/tags/%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -609,6 +595,13 @@
   
   <url>
     <loc>https://gptguide.cn/tags/Claude/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/ChatGPT/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -630,6 +623,13 @@
   
   <url>
     <loc>https://gptguide.cn/tags/Midjourney/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gptguide.cn/tags/Claude-Code/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -715,14 +715,14 @@
 
   
   <url>
-    <loc>https://gptguide.cn/categories/AI%E5%88%9B%E4%BD%9C/</loc>
+    <loc>https://gptguide.cn/categories/Claude/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gptguide.cn/categories/Claude/</loc>
+    <loc>https://gptguide.cn/categories/AI%E5%88%9B%E4%BD%9C/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
